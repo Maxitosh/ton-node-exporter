@@ -28,7 +28,8 @@ jobs:
         with:
           context: .
           file: ./build/Dockerfile
-          tags: ghcr.io/${{ github.repository }}:${{ github.ref_name }}
+          tags: ghcr.io/maxitosh/ton-node-exporter:${{ github.ref_name }}
+          push: true
           labels: |
             org.opencontainers.image.source=${{ github.repository }}
             org.opencontainers.image.description="A Prometheus exporter for TON Node"
