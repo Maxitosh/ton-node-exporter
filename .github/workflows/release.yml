@@ -28,7 +28,9 @@ jobs:
         with:
           context: .
           file: ./build/Dockerfile
-          tags: ghcr.io/maxitosh/ton-node-exporter:${{ github.ref_name }}
+          tags: |
+            ghcr.io/maxitosh/ton-node-exporter:${{ github.ref_name }}
+            ghcr.io/maxitosh/ton-node-exporter:latest
           push: true
           labels: |
             org.opencontainers.image.source=${{ github.repository }}
