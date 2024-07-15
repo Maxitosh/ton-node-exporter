@@ -4,11 +4,9 @@ on:
   push:
     tags:
       - 'v*'
-    branches:
-      - main
 
 jobs:
-  build:
+  build_and_push:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,7 +28,6 @@ jobs:
         with:
           context: .
           file: ./build/Dockerfile
-          push: true
           tags: ghcr.io/${{ github.repository }}:${{ github.ref_name }}
           labels: |
             org.opencontainers.image.source=${{ github.repository }}
