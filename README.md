@@ -79,12 +79,12 @@ docker run -d --name ton-node-exporter --env-file .env -p 9100:9100 ghcr.io/maxi
 
 The exporter exposes the following metrics:
 
-| Metric name                        | Metric type | Description                                                                 | Labels/tags | Status |  
-|------------------------------------|-------------|-----------------------------------------------------------------------------|-------------|--------|  
-| ton_node_master_chain_block_number | Gauge       | The current master chain block number.                                      | env         | ✅      |
-| ton_node_head_lag                  | Gauge       | The lag between the current master chain block on the node and the network. |             | ✅      |
-| ton_node_indexing_latency          | Gauge       | Time lag between the last Elector transaction and the current time.         |             | ✅      |
-| ton_node_last_elector_tx_time      | Gauge       | Last Elector transaction time.                                              |             | ✅      |
+| Metric name                        | Metric type | Description                                                                    | Labels/tags | Status |  
+|------------------------------------|-------------|--------------------------------------------------------------------------------|-------------|--------|  
+| ton_node_master_chain_block_number | Gauge       | The current master chain block number.                                         | env         | ✅      |
+| ton_node_head_lag                  | Gauge       | The lag between the current master chain block on the node and the network.    |             | ✅      |
+| ton_node_indexing_latency          | Gauge       | Time lag in seconds between the last Elector transaction and the current time. |             | ✅      |
+| ton_node_last_elector_tx_time      | Gauge       | Last Elector transaction time in seconds (Unix time).                          |             | ✅      |
 
 ## Testing
 
