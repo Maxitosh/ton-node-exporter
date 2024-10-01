@@ -7,7 +7,7 @@ require (
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/prometheus/client_golang v1.19.1
 	github.com/stretchr/testify v1.9.0
-	github.com/xssnick/tonutils-go v1.9.8
+	github.com/xssnick/tonutils-go v1.10.2
 	go.uber.org/mock v0.4.0
 )
 

@@ -38,6 +38,21 @@ func (m *MockFetcher) EXPECT() *MockFetcherMockRecorder {
 	return m.recorder
 }
 
+// FetchAddressLastTransactionTime mocks base method.
+func (m *MockFetcher) FetchAddressLastTransactionTime(addr string) (uint32, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FetchAddressLastTransactionTime", addr)
+	ret0, _ := ret[0].(uint32)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FetchAddressLastTransactionTime indicates an expected call of FetchAddressLastTransactionTime.
+func (mr *MockFetcherMockRecorder) FetchAddressLastTransactionTime(addr any) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FetchAddressLastTransactionTime", reflect.TypeOf((*MockFetcher)(nil).FetchAddressLastTransactionTime), addr)
+}
+
 // FetchMasterChainBlockNumber mocks base method.
 func (m *MockFetcher) FetchMasterChainBlockNumber() (float64, error) {
 	m.ctrl.T.Helper()

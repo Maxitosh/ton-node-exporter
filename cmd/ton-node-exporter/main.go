@@ -44,7 +44,10 @@ func main() {
 		fetcher.NewADNLFetcher(localAPI),
 		fetcher.NewADNLFetcher(globalAPI),
 	)
-	prometheus.MustRegister(tonBlockNumberCollector)
+	tonIndexingLatencyCollector := collector.NewTonIndexingLatencyCollector(
+		fetcher.NewADNLFetcher(localAPI),
+	)
+	prometheus.MustRegister(tonBlockNumberCollector, tonIndexingLatencyCollector)
 
 	// Expose the registered metrics via HTTP.
 	http.Handle("/metrics", promhttp.Handler())
